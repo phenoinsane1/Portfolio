@@ -1,0 +1,79 @@
+/* RESET & BASICS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background: url('image.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  /* OVERLAY & LAYOUT */
+  .overlay {
+    /* A subtle gradient overlay to ensure text is readable on the left */
+    background: linear-gradient(to right, rgba(255,255,255,0.9) 35%, rgba(255,255,255,0) 70%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .left-content {
+    flex: 100;
+    padding: 2rem;
+    max-width: 600px;
+    color: #333;
+  }
+  
+  /* ANIMATED NAME */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animated-name {
+    animation: fadeInDown 1.5s ease forwards;
+  }
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .overlay {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.9) 40%, rgba(255,255,255,0) 70%);
+    }
+    .left-content {
+      width: 100%;
+      max-width: 100%;
+    }
+    .nav-bar {
+      position: static;
+      text-align: center;
+      margin: 1rem auto;
+    }
+    .nav-list {
+      justify-content: center;
+    }
+  }
+  .cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #87b908;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.cv-button:hover {
+    background-color: #005f8c;
+}
